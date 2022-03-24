@@ -13,53 +13,70 @@ namespace Quiz
 
     public partial class Form1 : Form
     {
-       
+
+        public int CorrectCounter = 0;
+        public int FalseCounter = 0;
+
         public Form1()
         {
             InitializeComponent();
-            button2.Visible = false;
-            label2.Visible = false;
+            nextButton.Visible = false;
+            answerShow.Visible = false;
         }
-        public int a = 0;
-        public int b = 0;
+        
         private void Form1_Load(object sender, EventArgs e)
         {
-            Class1 c = new Class1();
-            label1.Text = c.f1[0];
-            radioButton1.Text = c.f1[1];
-            radioButton2.Text = c.f1[2];
-            radioButton3.Text = c.f1[3];
+            
+            TextMaker();
+
+            void TextMaker()
+            {
+
+                Class1 textClass = new Class1();
+                question.Text = textClass.FormTexts1[0];
+                answer1.Text = textClass.FormTexts1[1];
+                answer2.Text = textClass.FormTexts1[2];
+                answer3.Text = textClass.FormTexts1[3];
+
+                /* tried smtng
+                String[] NameHolder = { question.Text, answer1.Text, answer2.Text, answer3.Text };
+                for (int i = 0; i < textClass.FormTexts1.Length; i++)
+                {
+                    NameHolder[i] = textClass.FormTexts1[i];
+                }
+                */                
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            label2.Visible = true;
-            button2.Visible = true;
-            if (radioButton1.Checked || radioButton2.Checked || radioButton3.Checked)
+            answerShow.Visible = true;
+            nextButton.Visible = true;
+            if (answer1.Checked || answer2.Checked || answer3.Checked)
             {
-                if (radioButton1.Checked)
+                if (answer1.Checked)
                 {
-                    a++;
-                    label2.Text = "Correct";
+                    CorrectCounter++;
+                    answerShow.Text = "Correct Answer!";
                 }
                 else{
-                    b++;
-                    label2.Text = "Wrong";
+                    FalseCounter++;
+                    answerShow.Text = "Wrong Answer! answer is: " + answer1.Text;
                 }
             }
-            radioButton1.Enabled = false;
-            radioButton2.Enabled = false;
-            radioButton3.Enabled = false;
-            button1.Enabled= false;
+            answer1.Enabled = false;
+            answer2.Enabled = false;
+            answer3.Enabled = false;
+            checkButton.Enabled= false;
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
 
-            Form2 f = new Form2();
-            f.a = a;
-            f.b = b;
-            f.Show();
+            Form2 nextForm = new Form2();
+            nextForm.CorrectCounter = CorrectCounter;
+            nextForm.FalseCounter = FalseCounter;
+            nextForm.Show();
             this.Hide();
         }
     }

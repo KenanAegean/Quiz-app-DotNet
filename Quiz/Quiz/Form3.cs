@@ -12,20 +12,29 @@ namespace Quiz
 {
     public partial class Form3 : Form
     {
+        public int CorrectCounter = 0;
+        public int FalseCounter = 0;
         public Form3()
         {
             InitializeComponent();
-            button2.Visible = false;
+            exitButton.Visible = false;
+            wrongShow.Visible = false;
+            correctShow.Visible = false;
+            answerShow.Visible = false;
         }
-        public int a;
-        public int b;
         private void Form3_Load(object sender, EventArgs e)
         {
-            Class1 c = new Class1();
-            label1.Text = c.f3[0];
-            radioButton1.Text = c.f3[1];
-            radioButton2.Text = c.f3[2];
-            radioButton3.Text = c.f3[3];
+            TextMaker();
+
+            void TextMaker()
+            {
+
+                Class1 textClass = new Class1();
+                question.Text = textClass.FormTexts3[0];
+                answer1.Text = textClass.FormTexts3[1];
+                answer2.Text = textClass.FormTexts3[2];
+                answer3.Text = textClass.FormTexts3[3];
+            }
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -35,25 +44,30 @@ namespace Quiz
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked || radioButton2.Checked || radioButton3.Checked)
+            if (answer1.Checked || answer2.Checked || answer3.Checked)
             {
-                if (radioButton1.Checked)
+                if (answer2.Checked)
                 {
-                    a++;
+                    CorrectCounter++;
                 }
                 else
                 {
-                    b++;
+                    FalseCounter++;
+                    answerShow.Text = "Wrong Answer! answer is: " + answer2.Text;
                 }
             }
-            button1.Enabled = false;
-            radioButton1.Enabled = false;
-            radioButton2.Enabled = false;
-            radioButton3.Enabled = false;
+            checkButton.Enabled = false;
+            answer1.Enabled = false;
+            answer2.Enabled = false;
+            answer3.Enabled = false;
 
-            label4.Text = a.ToString();
-            label5.Text = b.ToString();
-            button2.Visible = true;
+            wrongShow.Visible = true;
+            correctShow.Visible = true;
+            answerShow.Visible = true;
+
+            correctShow.Text = "You have " + CorrectCounter.ToString() + " correct ancswer!";
+            wrongShow.Text = "You have " + FalseCounter.ToString() + " wrong answer!";
+            exitButton.Visible = true;
         }
 
     }

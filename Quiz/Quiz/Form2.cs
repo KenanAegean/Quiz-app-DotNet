@@ -12,54 +12,61 @@ namespace Quiz
 {
     public partial class Form2 : Form
     {
+        public int CorrectCounter = 0;
+        public int FalseCounter = 0;
         public Form2()
         {
             InitializeComponent();
+            nextButton.Visible = false;
+            answerShow.Visible = false;
         }
-        public int a ;
-        public int b ;
+
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            Class1 c = new Class1();
-            label1.Text = c.f2[0];
-            radioButton1.Text = c.f2[1];
-            radioButton2.Text = c.f2[2];
-            radioButton3.Text = c.f2[3];
-            button2.Visible = false;
-            label2.Visible = false;
+            TextMaker();
+
+            void TextMaker()
+            {
+
+                Class1 textClass = new Class1();
+                question.Text = textClass.FormTexts2[0];
+                answer1.Text = textClass.FormTexts2[1];
+                answer2.Text = textClass.FormTexts2[2];
+                answer3.Text = textClass.FormTexts2[3];
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label2.Visible = true;
-            button2.Visible = true;
-            if (radioButton1.Checked || radioButton2.Checked || radioButton3.Checked)
+            answerShow.Visible = true;
+            nextButton.Visible = true;
+            if (answer1.Checked || answer2.Checked || answer3.Checked)
             {
-                if (radioButton1.Checked)
+                if (answer3.Checked)
                 {
-                    a++;
-                    label2.Text = "Correct";
+                    CorrectCounter++;
+                    answerShow.Text = "Correct Answer!";
                 }
                 else
                 {
-                    b++;
-                    label2.Text = "Wrong";
+                    FalseCounter++;
+                    answerShow.Text = "Wrong Answer! answer is: " + answer3.Text;
                 }
             }
-            button1.Enabled = false;
-            radioButton1.Enabled = false;
-            radioButton2.Enabled = false;
-            radioButton3.Enabled = false;
+            answer1.Enabled = false;
+            answer2.Enabled = false;
+            answer3.Enabled = false;
+            checkButton.Enabled = false;
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form3 f = new Form3();
-            f.a = a;
-            f.b = b;
-            f.Show();
+            Form3 nextForm = new Form3();
+            nextForm.CorrectCounter = CorrectCounter;
+            nextForm.FalseCounter = FalseCounter;
+            nextForm.Show();
             this.Hide();
         }
     }

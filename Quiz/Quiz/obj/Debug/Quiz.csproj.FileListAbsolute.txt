@@ -22,3 +22,15 @@ C:\Users\kenan\source\repos\Quiz\Quiz\obj\Debug\Quiz.csproj.GenerateResource.cac
 C:\Users\kenan\source\repos\Quiz\Quiz\obj\Debug\Quiz.csproj.CoreCompileInputs.cache
 C:\Users\kenan\source\repos\Quiz\Quiz\obj\Debug\Quiz.exe
 C:\Users\kenan\source\repos\Quiz\Quiz\obj\Debug\Quiz.pdb
+C:\Users\kenan\OneDrive\Belgeler\GitHub\Quiz-app-DotNet\Quiz\Quiz\bin\Debug\Quiz.exe.config
+C:\Users\kenan\OneDrive\Belgeler\GitHub\Quiz-app-DotNet\Quiz\Quiz\bin\Debug\Quiz.exe
+C:\Users\kenan\OneDrive\Belgeler\GitHub\Quiz-app-DotNet\Quiz\Quiz\bin\Debug\Quiz.pdb
+C:\Users\kenan\OneDrive\Belgeler\GitHub\Quiz-app-DotNet\Quiz\Quiz\obj\Debug\Quiz.csproj.AssemblyReference.cache
+C:\Users\kenan\OneDrive\Belgeler\GitHub\Quiz-app-DotNet\Quiz\Quiz\obj\Debug\Quiz.Form1.resources
+C:\Users\kenan\OneDrive\Belgeler\GitHub\Quiz-app-DotNet\Quiz\Quiz\obj\Debug\Quiz.Form2.resources
+C:\Users\kenan\OneDrive\Belgeler\GitHub\Quiz-app-DotNet\Quiz\Quiz\obj\Debug\Quiz.Form3.resources
+C:\Users\kenan\OneDrive\Belgeler\GitHub\Quiz-app-DotNet\Quiz\Quiz\obj\Debug\Quiz.Properties.Resources.resources
+C:\Users\kenan\OneDrive\Belgeler\GitHub\Quiz-app-DotNet\Quiz\Quiz\obj\Debug\Quiz.csproj.GenerateResource.cache
+C:\Users\kenan\OneDrive\Belgeler\GitHub\Quiz-app-DotNet\Quiz\Quiz\obj\Debug\Quiz.csproj.CoreCompileInputs.cache
+C:\Users\kenan\OneDrive\Belgeler\GitHub\Quiz-app-DotNet\Quiz\Quiz\obj\Debug\Quiz.exe
+C:\Users\kenan\OneDrive\Belgeler\GitHub\Quiz-app-DotNet\Quiz\Quiz\obj\Debug\Quiz.pdb
