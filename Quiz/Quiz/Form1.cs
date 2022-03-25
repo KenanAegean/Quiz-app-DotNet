@@ -34,17 +34,19 @@ namespace Quiz
 
                 Class1 textClass = new Class1();
                 question.Text = textClass.FormTexts1[0];
+                /*
                 answer1.Text = textClass.FormTexts1[1];
                 answer2.Text = textClass.FormTexts1[2];
                 answer3.Text = textClass.FormTexts1[3];
+                */
 
-                /* tried smtng
-                String[] NameHolder = { question.Text, answer1.Text, answer2.Text, answer3.Text };
-                for (int i = 0; i < textClass.FormTexts1.Length; i++)
+                 //tried smtng not worked, ask teacher !!
+                RadioButton[] NameHolder = { answer1, answer2, answer3};
+                for (int i = 1; i < textClass.FormTexts1.Length; i++)
                 {
-                    NameHolder[i] = textClass.FormTexts1[i];
+                    NameHolder[i-1].Text = textClass.FormTexts1[i];
                 }
-                */                
+                              
             }
         }
         private void button1_Click(object sender, EventArgs e)
